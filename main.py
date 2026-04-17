@@ -8,13 +8,13 @@ def denoise_image(image_path):
     noisy_image_rgb = cv2.cvtColor(noisy_image, cv2.COLOR_BGR2RGB)
 
     gaussian_denoised_img = cv2.GaussianBlur(noisy_image, (5, 5), 0)
-    gaussian_denoised_img_rgb = cv2.cvtColor(gaussian_denoised_img, cv2.COLOR_RGB2BGR)
+    gaussian_denoised_img_rgb = cv2.cvtColor(gaussian_denoised_img, cv2.COLOR_BGR2RGB)
 
     median_denoised_img = cv2.medianBlur(noisy_image, 5)
-    median_denoised_img_rgb = cv2.cvtColor(median_denoised_img, cv2.COLOR_RGB2BGR)
+    median_denoised_img_rgb = cv2.cvtColor(median_denoised_img, cv2.COLOR_BGR2RGB)
 
     bilateral_denoised_img = cv2.bilateralFilter(noisy_image, 9, 75, 75)
-    bilateral_denoised_img_rgb = cv2.cvtColor(bilateral_denoised_img, cv2.COLOR_RGB2BGR)
+    bilateral_denoised_img_rgb = cv2.cvtColor(bilateral_denoised_img, cv2.COLOR_BGR2RGB)
 
     plt.figure(figsize=(15, 10))
     plt.subplot(2, 2, 1)
@@ -40,6 +40,6 @@ def denoise_image(image_path):
     plt.show()
 
 
-denoise_image('noisy1.png')
-denoise_image('noisy2.png')
+#denoise_image('noisy1.png')
+#denoise_image('noisy2.png')
 denoise_image('noisy3.jpeg')
